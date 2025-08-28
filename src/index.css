@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --gold: #b5862c;
+  --black: #000000;
+  --white: #ffffff;
+  --soft-lavender: #F5F3FF;
+  --neon-green: #D9FF00;
+  --neon-yellow: #dfff00;
+  --bright-pink: #ff00c1;
+  --bright-cyan: #00f2ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+  background-color: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--gold), #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bright-gradient-text {
+  background: linear-gradient(135deg, var(--bright-pink), var(--bright-cyan), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradient-animation 5s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.blink {
+  animation: blink-animation 1.5s infinite;
+}
+
+@keyframes blink-animation {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.glow {
+  box-shadow: 0 0 20px rgba(181, 134, 44, 0.3);
+}
+
+.text-shadow {
+  text-shadow: 0 0 10px rgba(181, 134, 44, 0.5);
+}
+
+.bg-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(181, 134, 44, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(181, 134, 44, 0.05) 0%, transparent 50%);
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.card-3d:hover {
+  transform: rotateY(2deg) rotateX(2deg) translateZ(10px);
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-3d {
+  transform-style: preserve-3d;
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  text-shadow: 0 0 15px rgba(223, 255, 0, 0.4);
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  width: calc(100% + 0.4em);
+  height: 100%;
+  left: -0.2em;
+  bottom: -0.1em;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='50' viewBox='0 0 200 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.16455 27.6732C2.16455 27.6732 44.5385 49.0069 98.534 31.2582C152.529 13.5095 197.643 2.16455 197.643 2.16455' stroke='%23DFFF00' stroke-width='40' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.in-view .highlight::after {
+  transform: scaleX(1);
+}
+
+.underline-on-hover {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.underline-on-hover::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--gold);
+  transition: width 0.3s ease-out;
+}
+
+.underline-on-hover:hover::after {
+  width: 100%;
+}
+
+.btn-glow-fill {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.4s ease-in-out, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-glow-fill:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(181, 134, 44, 0.4);
+}
+
+.btn-glow-fill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.btn-glow-fill:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
