@@ -20,7 +20,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.2, type: 'spring' }}
           className="text-5xl md:text-7xl font-black mb-6 leading-tight"
         >
-          We Engineer <Highlight>Growth</Highlight>, Not Ads.
+          Just Pure Organic <Highlight>Growth</Highlight>, Not Ads.
         </motion.h1>
         
         <motion.p
@@ -29,7 +29,7 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.5, type: 'spring' }}
           className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-          Authentic influence through powerful social media strategy.
+          Build a Personal Brand that Speaks Louder, Organically...
         </motion.p>
         
         <motion.div

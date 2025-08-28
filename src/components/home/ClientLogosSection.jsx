@@ -3,9 +3,20 @@ import { motion } from 'framer-motion';
 
 const ClientLogosSection = () => {
   const [isCarouselHovered, setIsCarouselHovered] = useState(false);
+
   const clientLogos = [
-    "Nike", "Apple", "Google", "Microsoft", "Amazon", "Tesla", "Netflix", "Spotify"
+    { name: "Laldi", src: "/logos/ladli.jpg" },
+    { name: "Kadmba", src: "/logos/kadmba.jpg" },
+    { name: "Alcone", src: "/logos/alcone.jpg" },
+    { name: "AIwala", src: "/logos/aiwala.jpg" },
+    { name: "DesiXporters", src: "/logos/desixporters.jpg" },
+    { name: "Dhanarthi", src: "/logos/dhanarthi.jpg" },
+    { name: "AyurKhyati", src: "/logos/ayurkhyati.jpg" },
+    { name: "UB Company", src: "/logos/ubcompany.jpg" },
   ];
+
+  // Duplicate logos for continuous scroll
+  const logosForScroll = [...clientLogos, ...clientLogos];
 
   return (
     <section className="py-20 bg-black">
@@ -19,29 +30,34 @@ const ClientLogosSection = () => {
           <span className="underline-on-hover">✨ Brands That Trust GROWLOUDER</span>
         </motion.h2>
       </div>
+
       <div 
-        className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
-        onMouseEnter={() => setIsCarouselHovered(true)}
-        onMouseLeave={() => setIsCarouselHovered(false)}
-      >
-        <motion.div 
-          className="flex items-center justify-center md:justify-start animate-infinite-scroll"
-          animate={{ animationPlayState: isCarouselHovered ? "paused" : "running" }}
+  className="w-full overflow-hidden py-7"  // ← increase py if needed
+  onMouseEnter={() => setIsCarouselHovered(true)}
+  onMouseLeave={() => setIsCarouselHovered(false)}
+>
+        <motion.div
+          className="flex gap-12 whitespace-nowrap"
+          animate={{
+            x: isCarouselHovered ? 0 : ["0%", "-50%"] // Scroll left continuously
+          }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 120, // Adjust scroll speed
+              ease: "linear"
+            }
+          }}
         >
-          {clientLogos.map((logo, index) => (
-            <div key={index} className="mx-8 flex-shrink-0 w-48 text-center text-2xl font-bold text-gray-500 hover:text-white hover:scale-105 hover:drop-shadow-[0_0_10px_var(--gold)] transition-all duration-300">
-              {logo}
-            </div>
-          ))}
-        </motion.div>
-        <motion.div 
-          className="flex items-center justify-center md:justify-start animate-infinite-scroll"
-          aria-hidden="true"
-          animate={{ animationPlayState: isCarouselHovered ? "paused" : "running" }}
-        >
-          {clientLogos.map((logo, index) => (
-            <div key={index} className="mx-8 flex-shrink-0 w-48 text-center text-2xl font-bold text-gray-500 hover:text-white hover:scale-105 hover:drop-shadow-[0_0_10px_var(--gold)] transition-all duration-300">
-              {logo}
+          {logosForScroll.map((logo, index) => (
+            <div key={index} className="flex-shrink-0 flex items-center justify-center">
+              <img 
+                src={logo.src} 
+                alt={logo.name} 
+                className="w-32 h-32 rounded-full object-contain hover:scale-105 hover:drop-shadow-[0_0_10px_var(--gold)] transition-all duration-300"
+                // Edit w-32 h-32 here to make logos bigger or smaller
+              />
             </div>
           ))}
         </motion.div>

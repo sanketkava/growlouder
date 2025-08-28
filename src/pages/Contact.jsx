@@ -73,28 +73,28 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      details: "+1 (555) 123-4567",
+      details: "+91 9016758329",
       description: "Speak directly with our growth experts"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      details: "New York, NY",
+      details: "701 Rio IT Park,Yamuna Chowk ",
       description: "Schedule a meeting at our headquarters"
     }
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook', color: 'hover:text-blue-500' },
-    { icon: Twitter, href: '#', label: 'Twitter', color: 'hover:text-blue-400' },
     { icon: Instagram, href: '#', label: 'Instagram', color: 'hover:text-pink-500' },
+    { icon: Facebook, href: '#', label: 'Facebook', color: 'hover:text-blue-500' },
+    { icon: Twitter, href: '#', label: 'Twitter', color: 'hover:text-blue-400' },    
     { icon: Linkedin, href: '#', label: 'LinkedIn', color: 'hover:text-blue-600' },
   ];
 
   return (
     <>
       <Helmet>
-        <title>Contact Us - GROWLOUDER | Get In Touch</title>
+        <title>Contact Us - GROWLOUDER PRODUCTIONS | Get In Touch</title>
         <meta name="description" content="Ready to grow your social media presence? Contact GROWLOUDER today for a free consultation and discover how we can amplify your brand's voice." />
       </Helmet>
 

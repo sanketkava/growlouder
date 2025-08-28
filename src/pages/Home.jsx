@@ -16,9 +16,9 @@ const Home = () => {
       <HeroSection />
       <ClientLogosSection />
       <ProcessSection />
-      <BlueprintSection />
       <ReelsSection />
-    </>
+      <BlueprintSection />
+       </>
   );
 };
 
