@@ -34,7 +34,7 @@ const About = () => {
         <title>About Us - GROWLOUDER | Our Story & Mission</title>
         <meta
           name="description"
-          content="Discover GROWLOUDER’s mission to build authentic personal brands and organic social media growth. Meet our team and learn how we empower voices to grow louder."
+          content="Discover GROWLOUDERs mission to build authentic personal brands and organic social media growth. Meet our team and learn how we empower voices to grow louder."
         />
       </Helmet>
 
