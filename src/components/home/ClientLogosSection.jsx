@@ -45,7 +45,7 @@ const ClientLogosSection = () => {
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 120, // Adjust scroll speed
+              duration: 10, // Adjust scroll speed
               ease: "linear"
             }
           }}
