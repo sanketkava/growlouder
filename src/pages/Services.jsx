@@ -10,10 +10,12 @@ import {
   Users,
 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Services = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const services = [
     {
@@ -207,13 +209,7 @@ const Services = () => {
               variant="outline"
               size="lg"
               className="border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-black transition-all duration-300"
-              onClick={() =>
-                toast({
-                  title: "🚧 Get Started Feature",
-                  description:
-                    "This feature isn't implemented yet — request it in your next prompt! 🚀",
-                })
-              }
+              onClick={() => navigate('/contact')}
             >
               Get Started Today
             </Button>

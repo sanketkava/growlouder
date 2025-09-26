@@ -67,7 +67,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      details: "hello@growlouder.com",
+      details: "admin@growlouder.com",
       description: "Get in touch for partnerships and inquiries"
     },
     {
@@ -85,10 +85,10 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: '#', label: 'Instagram', color: 'hover:text-pink-500' },
+    { icon: Instagram, href: 'https://www.instagram.com/growlouder.in/', label: 'Instagram', color: 'hover:text-pink-500' },
     { icon: Facebook, href: '#', label: 'Facebook', color: 'hover:text-blue-500' },
     { icon: Twitter, href: '#', label: 'Twitter', color: 'hover:text-blue-400' },    
-    { icon: Linkedin, href: '#', label: 'LinkedIn', color: 'hover:text-blue-600' },
+    { icon: Linkedin, href: 'https://in.linkedin.com/company/growlouder', label: 'LinkedIn', color: 'hover:text-blue-600' },
   ];
 
   return (
@@ -230,6 +230,8 @@ const Contact = () => {
                     <motion.a
                       key={social.label}
                       href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       className={`w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 ${social.color} transition-colors duration-300`}
@@ -240,17 +242,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="mt-8">
-                <h3 className="text-xl font-semibold text-white mb-4">Our Location</h3>
-                <div className="w-full h-64 bg-gray-800 rounded-xl flex items-center justify-center border border-gray-700">
-                  <div className="text-center">
-                    <MapPin size={48} className="text-[var(--gold)] mx-auto mb-2" />
-                    <p className="text-gray-400">Interactive Map</p>
-                    <p className="text-sm text-gray-500">New York, NY</p>
-                  </div>
-                </div>
-              </div>
+              
             </motion.div>
           </div>
 
